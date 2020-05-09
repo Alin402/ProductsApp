@@ -25,7 +25,7 @@ const AddProduct = ({ addAlert }) => {
         const body = JSON.stringify(formData);
 
         try {
-            await axios.post('https://myproductsapp.herokuapp.com//products', body, config);
+            await axios.post('https://myproductsapp.herokuapp.com/products', body, config);
 
             console.log(body);
 

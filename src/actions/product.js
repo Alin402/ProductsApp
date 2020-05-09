@@ -19,7 +19,7 @@ import { addAlert } from './alert';
 
 export const getProducts = () => async dispatch => {
     try {
-        const res = await axios.get('https://myproductsapp.herokuapp.com//products');
+        const res = await axios.get('https://myproductsapp.herokuapp.com/products');
 
         dispatch({
             type: GET_PRODUCTS,
@@ -34,7 +34,7 @@ export const getProducts = () => async dispatch => {
 
 export const deleteProduct = (id) => async dispatch => {
     try {
-        await axios.delete(`https://myproductsapp.herokuapp.com//products/delete-product/${id}`);
+        await axios.delete(`https://myproductsapp.herokuapp.com/products/delete-product/${id}`);
 
         dispatch({
             type: DELETE_PRODUCT,
@@ -51,7 +51,7 @@ export const deleteProduct = (id) => async dispatch => {
 
 export const getProductsForList = () => async dispatch => {
     try {
-        const res = await axios.post('https://myproductsapp.herokuapp.com//products/list', {}, {
+        const res = await axios.post('https://myproductsapp.herokuapp.com/products/list', {}, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -76,7 +76,7 @@ export const toggleAv = (id) => async dispatch => {
             }
         }
 
-        const res = await axios.put(`https://myproductsapp.herokuapp.com//products/${id}`, {}, config);
+        const res = await axios.put(`https://myproductsapp.herokuapp.com/products/${id}`, {}, config);
 
         dispatch({
             type: TOGGLE_AV,
@@ -100,7 +100,7 @@ export const searchProduct = (searchField) => dispatch => {
 
 export const updateProduct = (id, formData) => async dispatch => {
     try {
-        const res = await axios.put(`https://myproductsapp.herokuapp.com//products/edit-product/${id}`, formData, {
+        const res = await axios.put(`https://myproductsapp.herokuapp.com/products/edit-product/${id}`, formData, {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -120,7 +120,7 @@ export const getProduct = (id) => async dispatch => {
         type: CLEAR_PRODUCT
     });
     try {
-        const res = await axios.get(`https://myproductsapp.herokuapp.com//products/${id}`);
+        const res = await axios.get(`https://myproductsapp.herokuapp.com/products/${id}`);
 
         dispatch({
             type: GET_PRODUCT,
